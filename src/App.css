@@ -595,5 +595,5 @@ h4 {
 
 /* Si SÍ hay preferencia → animación casi instantánea (pero dispara animationend) */
 @media (prefers-reduced-motion: reduce){
-  .splash--anim{ animation: splashLife 1.5s linear forwards; }
+  .splash--anim{ animation: splashLife 2.2s linear forwards; }
 }
