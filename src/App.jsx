@@ -205,7 +205,7 @@ function Splash() {
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setGone(true), 1200); // más corto para LCP
+    const t = setTimeout(() => setGone(true), 3500); // más corto para LCP
     return () => clearTimeout(t);
   }, []);
 

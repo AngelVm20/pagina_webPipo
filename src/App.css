@@ -227,4 +227,4 @@ h2 {
 .splash__img { width:min(90vw, 520px); height:auto; border-radius:16px;
   box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 24px rgba(255,215,0,.55); }
 @media (prefers-reduced-motion: no-preference) { .splash--anim { animation: splashLife 1.2s ease forwards; } }
-@media (prefers-reduced-motion: reduce)        { .splash--anim { animation: splashLife 1.2s linear forwards; } }
+@media (prefers-reduced-motion: reduce)        { .splash--anim { animation: splashLife 3.5s linear forwards; } }
