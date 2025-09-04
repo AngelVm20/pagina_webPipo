@@ -127,6 +127,19 @@
 
 /*GENERAL TIPOS DE LETRAS*/
 /*H2*/
+.horarios{
+  color: #FFD700;
+  text-shadow: 2px 2px 8px #1fa24b;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: .2px;
+  line-height: .5;
+  /* grande en desktop, razonable en móvil */
+  font-size: clamp(1rem, 6vw, 3rem);
+  margin: 0 8px 18px;
+  /* pequeño padding lateral para que no “choque” en móvil */
+}
+
 h2 {
   color: #FFD700;
   text-shadow: 2px 2px 8px #1fa24b;
@@ -152,7 +165,7 @@ body,
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #07130b, #0b2214);
+  background: linear-gradient(180deg, #07130b, rgb(11, 34, 20));
   color: var(--text);
   font-family: system-ui, Segoe UI, Roboto, Arial
 }

@@ -13,10 +13,14 @@ import sonrisas from "./assets/sonrisaspipo.png";
 import scooter from "./assets/scooterfastnet.png";
 import camaras from "./assets/camarasfast.png";
 import familiafast from "./assets/familiafast.png";
+import leonElegante from "./assets/leonElegante.png";
+import soporte from "./assets/soporte.png";
+import instalacion from "./assets/instalacion.png";
+import tri from "./assets/gemelosfut.png";
 
 
 /** ====== CONFIG (.env) ====== */
-const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593999999999";
+const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593994009469";
 const MAP_LAT = Number(import.meta.env.VITE_MAP_LAT || -0.25066);
 const MAP_LNG = Number(import.meta.env.VITE_MAP_LNG || -79.17138);
 const MAP_PLACE = encodeURIComponent(import.meta.env.VITE_MAP_PLACE || "FASTNET Santo Domingo");
@@ -59,7 +63,7 @@ const PLANES = [
 /** ====== UTILS ====== */
 const waLink = (planId) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
-    `Hola FASTNET, quiero contratar el plan ${planId} desde ${DOMAIN}.`
+    `Hola FASTNET, estoy interesado en contratar el plan ${planId} que vi en ${DOMAIN}, me ayudas con información ?.`
   )}`;
 
 const mapsDirLink = (lat, lng) =>
@@ -274,7 +278,28 @@ export default function App() {
           <a className="btn btn--primary btn--center" href="#planes">Adquirir ya !</a>
         </section>
 
+        <section className="section">
+          <h2>BENEFICIOS</h2>
+          <div className="promos">
+            <img src={tri} alt="zapping" />
+            <img src={soporte} alt="soporte 24/7" />
+            <img src={instalacion} alt="instalacion inmediata" />
+          </div>
+
+        </section>
+
         <MapsSection />
+        <div className="promos">
+          <img src={leonElegante} alt="Leon Elegante" />
+        </div>
+        <br></br>
+        <h2>HORARIOS DE ATENCIÓN</h2>
+        <div className="horarios">
+          <p>LUNEAS A VIERNES</p>
+          <p>08:00 am - 17:00 pm</p>
+          <p>SABADO</p>
+          <p>08:00 am - 13:00 pm</p>
+        </div>
       </main>
 
       <Footer />
