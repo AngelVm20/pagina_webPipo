@@ -32,17 +32,17 @@ const SOCIALS = [
 ];
 
 const SECTORES = [
-  "9 de Diciembre","Simón Bolivar","El Centro","El Magisterio",
-  "Entrada de la 30 de Junio","Jorge Mahuad","Entrada de la Juan Eulogio","Centenario",
-  "Zona Rosa","Ucom 1","17 de Diciembre","Av. Chone","Av. Quevedo",
-  "Coop. Liberación Popular","20 de Octubre","Los Rosales",
+  "9 de Diciembre", "Simón Bolivar", "El Centro", "El Magisterio",
+  "Entrada de la 30 de Junio", "Jorge Mahuad", "Entrada de la Juan Eulogio", "Centenario",
+  "Zona Rosa", "Ucom 1", "17 de Diciembre", "Av. Chone", "Av. Quevedo",
+  "Coop. Liberación Popular", "20 de Octubre", "Los Rosales",
 ];
 
 const PLANES = [
-  { id: "eco200",   titulo: "ECO FAST 200",   img: imgEco200,   specs: ["Profilaxis Dental","Plan Básico","200MB Reales","Instalacion Gratis","$20 Incluido Impuestos"] },
-  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["1 Punto de red","2 Meses de Streaming Gratis","300MB Reales","Instalacion Gratis","$23.30 Incluido Impuestos"] },
-  { id: "power400", titulo: "POWER FAST 400", img: imgPower400, specs: ["3 Meses con 25% Descuento","1 Punto de red","Streaming Ilimitado - Zapping","Wifi 6","400MB Reales","Instalacion Gratis","$25.75 Incluido Impuestos"] },
-  { id: "play500",  titulo: "PLAY FAST 500",  img: imgPlay500,  specs: ["6 Meses con 25% Descuento","1 Punto de red","Streaming Ilimitado para 3 dispositivos - Zapping","1 Router adicional","Wifi 6","500MB Reales","Instalacion Gratis","$30.90 Incluido Impuestos"] },
+  { id: "eco200", titulo: "ECO FAST 200", img: imgEco200, specs: ["Profilaxis Dental", "Plan Básico", "200MB Reales", "Instalacion Gratis", "$20 Incluido Impuestos"] },
+  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.30 Incluido Impuestos"] },
+  { id: "power400", titulo: "POWER FAST 400", img: imgPower400, specs: ["3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
+  { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
 ];
 
 /** ====== UTILS ====== */
@@ -249,13 +249,13 @@ export default function App() {
             ))}
           </div>
         </section>
-
+        <br></br>
         <section className="section">
           <h2>PROMOCIONES</h2>
           <div className="promos">
-            <img src={sonrisas}  alt="Promoción sonrisas" loading="lazy" decoding="async" />
-            <img src={scooter}   alt="Promoción scooter"  loading="lazy" decoding="async" />
-            <img src={camaras}   alt="Promoción camaras"  loading="lazy" decoding="async" />
+            <img src={sonrisas} alt="Promoción sonrisas" loading="lazy" decoding="async" />
+            <img src={scooter} alt="Promoción scooter" loading="lazy" decoding="async" />
+            <img src={camaras} alt="Promoción camaras" loading="lazy" decoding="async" />
           </div>
           <br></br>
           <a className="btn btn--primary btn--center" href="#planes">Adquirir ya !</a>
@@ -264,8 +264,8 @@ export default function App() {
         <section className="section">
           <h2>BENEFICIOS</h2>
           <div className="promos">
-            <img src={tri}         alt="zapping"               loading="lazy" decoding="async" />
-            <img src={soporte}     alt="soporte 24/7"          loading="lazy" decoding="async" />
+            <img src={tri} alt="zapping" loading="lazy" decoding="async" />
+            <img src={soporte} alt="soporte 24/7" loading="lazy" decoding="async" />
             <img src={instalacion} alt="instalacion inmediata" loading="lazy" decoding="async" />
           </div>
         </section>
