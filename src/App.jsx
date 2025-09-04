@@ -19,6 +19,7 @@ import instalacion from "./assets/instalacion.png";
 import tri from "./assets/gemelosfut.png";
 
 
+
 /** ====== CONFIG (.env) ====== */
 const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593994009469";
 const MAP_LAT = Number(import.meta.env.VITE_MAP_LAT || -0.25066);
