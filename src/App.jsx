@@ -1,37 +1,114 @@
 import React, { useMemo, useState, useEffect } from "react";
-
 import "./App.css";
 
-/** === IMPORTA TUS IMÁGENES DESDE src/assets === */
+/** ====== IMPORTS (PNG + WEBP) ====== */
+// Logo (PNG está OK por tamaño)
 import logoFastnet from "./assets/FASTNET_BLANCO.png";
-import imgEco200 from "./assets/ecofastproto1.png";
-import imgSmart300 from "./assets/smartfast.png";
-import imgPower400 from "./assets/powerfast.png";
-import imgPlay500 from "./assets/playfast.png";
-import adquirir from "./assets/adquiereya.png";
-import sonrisas from "./assets/sonrisaspipo.png";
-import scooter from "./assets/scooterfastnet.png";
-import camaras from "./assets/camarasfast.png";
-import familiafast from "./assets/familiafast.png";
-import leonElegante from "./assets/leonElegante.png";
-import soporte from "./assets/soporte.png";
-import instalacion from "./assets/instalacion.png";
-import tri from "./assets/gemelosfut.png";
 
+// Planes (PNG + WEBP)
+import eco200Png from "./assets/ecofastproto1.png";
+import eco200Webp from "./assets/webp/ecofastproto1.webp";
 
+import smart300Png from "./assets/smartfast.png";
+import smart300Webp from "./assets/webp/smartfast.webp";
+
+import power400Png from "./assets/powerfast.png";
+import power400Webp from "./assets/webp/powerfast.webp";
+
+import play500Png from "./assets/playfast.png";
+import play500Webp from "./assets/webp/playfast.webp";
+
+// Promos
+import adquirirPng from "./assets/adquiereya.png";
+import adquirirWebp from "./assets/webp/adquiereya.webp";
+
+import sonrisasPng from "./assets/sonrisaspipo.png";
+import sonrisasWebp from "./assets/webp/sonrisaspipo.webp";
+
+import scooterPng from "./assets/scooterfastnet.png";
+import scooterWebp from "./assets/webp/scooterfastnet.webp";
+
+import camarasPng from "./assets/camarasfast.png";
+import camarasWebp from "./assets/webp/camarasfast.webp";
+
+// Beneficios
+import triPng from "./assets/gemelosfut.png";
+import triWebp from "./assets/webp/gemelosfut.webp";
+
+import soportePng from "./assets/soporte.png";
+import soporteWebp from "./assets/webp/soporte.webp";
+
+import instalacionPng from "./assets/instalacion.png";
+import instalacionWebp from "./assets/webp/instalacion.webp";
+
+// Extra
+import leonElegantePng from "./assets/leonElegante.png";
+import leonEleganteWebp from "./assets/webp/leonElegante.webp";
+
+// Splash (hero)
+import familiafastPng from "./assets/familiafast.png";
+import familiafastWebp from "./assets/webp/familiafast.webp";
 
 /** ====== CONFIG (.env) ====== */
 const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593994009469";
 const MAP_LAT = Number(import.meta.env.VITE_MAP_LAT || -0.25066);
 const MAP_LNG = Number(import.meta.env.VITE_MAP_LNG || -79.17138);
-const MAP_PLACE = encodeURIComponent(import.meta.env.VITE_MAP_PLACE || "FASTNET Santo Domingo");
+const MAP_PLACE = encodeURIComponent(
+  import.meta.env.VITE_MAP_PLACE || "FASTNET Santo Domingo"
+);
 const DOMAIN = import.meta.env.VITE_DOMAIN || "fastnet.com.ec";
+
+/** Util: <Picture> con webp + png */
+function Picture({
+  webp,
+  png,
+  alt,
+  className,
+  loading = "lazy",
+  decoding = "async",
+  fetchpriority,
+  sizes,
+  width,
+  height,
+}) {
+  return (
+    <picture>
+      {webp && <source srcSet={webp} type="image/webp" />}
+      <img
+        src={png}
+        alt={alt}
+        className={className}
+        loading={loading}
+        decoding={decoding}
+        fetchpriority={fetchpriority}
+        sizes={sizes}
+        width={width}
+        height={height}
+      />
+    </picture>
+  );
+}
 
 /** ====== DATOS ====== */
 const SOCIALS = [
-  { id: "fb", label: "Facebook", href: "https://www.facebook.com/profile.php?id=61580072365004", svg: "M10 20v-6H7v-4h3V7.5C10 4.42 11.79 3 14.5 3c1.04 0 1.94.08 2.2.11v3h-1.51C13.58 6.11 13 6.86 13 8v2h3.5l-.5 4H13v6h-3z" },
-  { id: "ig", label: "Instagram", href: "https://www.instagram.com/fastnetcomec?utm_source=ig_web_button_share_sheet&igsh=MTk2eWdkY3ludXp0dg==", svg: "M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm8 3a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10z" },
-  { id: "tt", label: "TikTok", href: "https://www.tiktok.com/@fastnetcomec", svg: "M19 6.5a5.5 5.5 0 01-4-1.6V17a5 5 0 11-5-5c.35 0 .69.04 1 .12V9.03a8 8 0 00-1-.07 7 7 0 107 7V8.9a9.5 9.5 0 004 1.1V6.5z" },
+  {
+    id: "fb",
+    label: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61580072365004",
+    svg: "M10 20v-6H7v-4h3V7.5C10 4.42 11.79 3 14.5 3c1.04 0 1.94.08 2.2.11v3h-1.51C13.58 6.11 13 6.86 13 8v2h3.5l-.5 4H13v6h-3z",
+  },
+  {
+    id: "ig",
+    label: "Instagram",
+    href: "https://www.instagram.com/fastnetcomec?utm_source=ig_web_button_share_sheet&igsh=MTk2eWdkY3ludXp0dg==",
+    svg: "M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm8 3a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10z",
+  },
+  {
+    id: "tt",
+    label: "TikTok",
+    href: "https://www.tiktok.com/@fastnetcomec",
+    svg: "M19 6.5a5.5 5.5 0 01-4-1.6V17a5 5 0 11-5-5c.35 0 .69.04 1 .12V9.03a8 8 0 00-1-.07 7 7 0 107 7V8.9a9.5 9.5 0 004 1.1V6.5z",
+  },
 ];
 
 const SECTORES = [
@@ -43,7 +120,6 @@ const SECTORES = [
   "Jorge Mahuad",
   "Entrada de la Juan Eulogio",
   "Centenario",
-
   "Zona Rosa",
   "Ucom 1",
   "17 de Diciembre",
@@ -54,11 +130,61 @@ const SECTORES = [
   "Los Rosales",
 ];
 
+/** Planes con WebP + PNG */
 const PLANES = [
-  { id: "eco200", titulo: "ECO FAST 200", img: imgEco200, specs: ["Profilaxis Dental", "Plan Básico", "200MB Reales", "Instalacion Gratis", "$20 Incluido Impuestos"] },
-  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.30 Incluido Impuestos"] },
-  { id: "power400", titulo: "POWER FAST 400", img: imgPower400, specs: ["3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
-  { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
+  {
+    id: "eco200",
+    titulo: "ECO FAST 200",
+    img: { webp: eco200Webp, png: eco200Png },
+    specs: [
+      "Profilaxis Dental",
+      "Plan Básico",
+      "200MB Reales",
+      "Instalacion Gratis",
+      "$20 Incluido Impuestos",
+    ],
+  },
+  {
+    id: "smart300",
+    titulo: "SMART FAST 300",
+    img: { webp: smart300Webp, png: smart300Png },
+    specs: [
+      "1 Punto de red",
+      "2 Meses de Streaming Gratis",
+      "300MB Reales",
+      "Instalacion Gratis",
+      "$23.30 Incluido Impuestos",
+    ],
+  },
+  {
+    id: "power400",
+    titulo: "POWER FAST 400",
+    img: { webp: power400Webp, png: power400Png },
+    specs: [
+      "3 Meses con 25% Descuento",
+      "1 Punto de red",
+      "Streaming Ilimitado - Zapping",
+      "Wifi 6",
+      "400MB Reales",
+      "Instalacion Gratis",
+      "$25.75 Incluido Impuestos",
+    ],
+  },
+  {
+    id: "play500",
+    titulo: "PLAY FAST 500",
+    img: { webp: play500Webp, png: play500Png },
+    specs: [
+      "6 Meses con 25% Descuento",
+      "1 Punto de red",
+      "Streaming Ilimitado para 3 dispositivos - Zapping",
+      "1 Router adicional",
+      "Wifi 6",
+      "500MB Reales",
+      "Instalacion Gratis",
+      "$30.90 Incluido Impuestos",
+    ],
+  },
 ];
 
 /** ====== UTILS ====== */
@@ -74,12 +200,12 @@ const mapsEmbed = (lat, lng, label) =>
   `https://www.google.com/maps?q=${lat},${lng}(${label})&z=15&output=embed`;
 
 /** ====== COMPONENTES ====== */
-/*SPLASH DE PANTALLA INICIAL*/
+/* SPLASH INICIAL */
 function Splash() {
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setGone(true), 3500); // respaldo
+    const t = setTimeout(() => setGone(true), 1200); // más corto para LCP
     return () => clearTimeout(t);
   }, []);
 
@@ -91,13 +217,22 @@ function Splash() {
       aria-hidden="true"
       onAnimationEnd={() => setGone(true)}
     >
-      <img src={familiafast} alt="" className="splash__img" />
+      <Picture
+        webp={familiafastWebp}
+        png={familiafastPng}
+        alt=""
+        className="splash__img"
+        fetchpriority="high"
+        loading="eager"
+        decoding="async"
+        width={1200}
+        height={675}
+      />
     </div>
   );
 }
 
-
-/*HEADER*/
+/* HEADER */
 function Header() {
   return (
     <header className="header">
@@ -108,16 +243,23 @@ function Header() {
 
         <div className="item2">
           <span className="brand__claim">
-            Elige FASTNET y navega con la velocidad de un león: rápido, fuerte y siempre conectado.
+            Elige FASTNET y navega con la velocidad de un león: rápido, fuerte
+            y siempre conectado.
           </span>
         </div>
 
         <div className="item3">
-          {/* opcional: etiqueta "Síguenos en:" */}
           <span className="follow-label">Síguenos en:</span>
           <nav className="header__socials">
             {SOCIALS.map((s) => (
-              <a key={s.id} className="social" href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+              <a
+                key={s.id}
+                className="social"
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+              >
                 <svg viewBox="0 0 24 24" className="social__icon" aria-hidden="true">
                   <path d={s.svg} />
                 </svg>
@@ -143,7 +285,13 @@ function PlanCard({ plan, onAcquire }) {
       <div className="card__inner">
         {/* Frente */}
         <div className="card__face card__front card__front--image">
-          <img src={plan.img} alt={plan.titulo} className="card__img--full" />
+          <Picture
+            webp={plan.img.webp}
+            png={plan.img.png}
+            alt={plan.titulo}
+            className="card__img--full"
+            sizes="(max-width:560px) 90vw, (max-width:1024px) 45vw, 22vw"
+          />
         </div>
 
         {/* Reverso */}
@@ -159,7 +307,7 @@ function PlanCard({ plan, onAcquire }) {
             <button
               className="btn btn--primary"
               onClick={(e) => {
-                e.stopPropagation(); // no vuelva a girar al click
+                e.stopPropagation();
                 onAcquire(plan);
               }}
             >
@@ -191,8 +339,15 @@ function Modal({ open, plan, onClose }) {
         </ul>
 
         <div className="modal__actions">
-          <button className="btn" onClick={onClose}>Cerrar</button>
-          <a className="btn btn--primary" href={waLink(plan.titulo)} target="_blank" rel="noopener noreferrer">
+          <button className="btn" onClick={onClose}>
+            Cerrar
+          </button>
+          <a
+            className="btn btn--primary"
+            href={waLink(plan.titulo)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Continuar en WhatsApp
           </a>
         </div>
@@ -232,7 +387,7 @@ function FloatingCTA() {
       rel="noopener noreferrer"
       aria-label="Contrata aquí por WhatsApp"
     >
-      <img src={adquirir} alt="CONTRATA AQUÍ" />
+      <Picture webp={adquirirWebp} png={adquirirPng} alt="CONTRATA AQUÍ" />
     </a>
   );
 }
@@ -260,7 +415,7 @@ export default function App() {
       <main className="container">
         <section className="section" id="planes">
           <h2>NUESTROS PLANES</h2>
-          <br></br>
+          <br />
           <div className="grid">
             {PLANES.map((p) => (
               <PlanCard key={p.id} plan={p} onAcquire={setModalPlan} />
@@ -271,41 +426,48 @@ export default function App() {
         <section className="section">
           <h2>PROMOCIONES</h2>
           <div className="promos">
-            <img src={sonrisas} alt="Promoción sonrisas" />
-            <img src={scooter} alt="Promoción scooter" />
-            <img src={camaras} alt="Promoción camaras" />
+            <Picture webp={sonrisasWebp} alt="Promoción sonrisas" png={sonrisasPng} />
+            <Picture webp={scooterWebp}  alt="Promoción scooter"  png={scooterPng} />
+            <Picture webp={camarasWebp}  alt="Promoción cámaras"  png={camarasPng} />
           </div>
-          <br></br>
-          <a className="btn btn--primary btn--center" href="#planes">Adquirir ya !</a>
+          <br />
+          <a className="btn btn--primary btn--center" href="#planes">
+            Adquirir ya !
+          </a>
         </section>
 
         <section className="section">
           <h2>BENEFICIOS</h2>
           <div className="promos">
-            <img src={tri} alt="zapping" />
-            <img src={soporte} alt="soporte 24/7" />
-            <img src={instalacion} alt="instalacion inmediata" />
+            <Picture webp={triWebp}         alt="Zapping"               png={triPng} />
+            <Picture webp={soporteWebp}     alt="Soporte 24/7"          png={soportePng} />
+            <Picture webp={instalacionWebp} alt="Instalación inmediata" png={instalacionPng} />
           </div>
-
         </section>
 
         <MapsSection />
+
         <div className="promos">
-          <img src={leonElegante} alt="Leon Elegante" />
+          <Picture webp={leonEleganteWebp} alt="León Elegante" png={leonElegantePng} />
         </div>
-        <br></br>
+
+        <br />
         <h2>HORARIOS DE ATENCIÓN</h2>
         <div className="horarios">
-          <p>LUNEAS A VIERNES</p>
+          <p>LUNES A VIERNES</p>
           <p>08:00 am - 17:00 pm</p>
-          <p>SABADO</p>
+          <p>SÁBADO</p>
           <p>08:00 am - 13:00 pm</p>
         </div>
       </main>
 
       <Footer />
       <FloatingCTA />
-      <Modal open={!!modalPlan} plan={modalPlan} onClose={() => setModalPlan(null)} />
+      <Modal
+        open={!!modalPlan}
+        plan={modalPlan}
+        onClose={() => setModalPlan(null)}
+      />
     </>
   );
 }

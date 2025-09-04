@@ -6,12 +6,9 @@ export default defineConfig({
   plugins: [
     react(),
     ViteImageOptimizer({
-      // ajustes recomendados
-      png: { quality: 75 },
-      jpeg: { quality: 75 },
-      webp: { quality: 75 },
-      avif: { quality: 60 },
-      // puedes ajustar según pruebas
+      webp: { quality: 72 }, // valor seguro
+      png:  { quality: 75  },
+      jpeg: { quality: 75  },
     }),
   ],
   base: '/pagina_webPipo/',
