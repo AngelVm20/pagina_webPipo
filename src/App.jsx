@@ -79,7 +79,7 @@ function Splash() {
   const [gone, setGone] = useState(false);
 
   useEffect(() => {
-    const t = setTimeout(() => setGone(true), 2500); // respaldo
+    const t = setTimeout(() => setGone(true), 3500); // respaldo
     return () => clearTimeout(t);
   }, []);
 
