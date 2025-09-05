@@ -16,6 +16,7 @@ import leonElegante from "./assets/webp/leonElegante.webp";
 import soporte from "./assets/webp/soporte.webp";
 import instalacion from "./assets/webp/instalacion.webp";
 import tri from "./assets/webp/gemelosfut.webp";
+import zapping from "./assets/webp/ZAPPING.webp"
 
 /** ====== CONFIG (.env) ====== */
 const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593994009469";
@@ -255,7 +256,7 @@ export default function App() {
           <div className="promos">
             <img src={sonrisas} alt="Promoción sonrisas" loading="lazy" decoding="async" />
             <img src={scooter} alt="Promoción scooter" loading="lazy" decoding="async" />
-            <img src={camaras} alt="Promoción camaras" loading="lazy" decoding="async" />
+            <img src={zapping} alt="Zapping" loading="lazy" decoding="async" />
           </div>
           <br></br>
           <a className="btn btn--primary btn--center" href="#planes">Adquirir ya !</a>
@@ -279,7 +280,7 @@ export default function App() {
         <br></br>
         <h2>HORARIOS DE ATENCIÓN</h2>
         <div className="horarios">
-          <p>LUNEAS A VIERNES</p>
+          <p>LUNES A VIERNES</p>
           <p>08:00 am - 17:00 pm</p>
           <p>SABADO</p>
           <p>08:00 am - 13:00 pm</p>
