@@ -16,7 +16,7 @@ import leonElegante from "./assets/webp/leonElegante.webp";
 import soporte from "./assets/webp/soporte.webp";
 import instalacion from "./assets/webp/instalacion.webp";
 import tri from "./assets/webp/gemelosfut.webp";
-import zapping from "./assets/webp/ZAPPING.webp"
+import zapping from "./assets/webp/zapping2.webp"
 
 /** ====== CONFIG (.env) ====== */
 const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593994009469";
