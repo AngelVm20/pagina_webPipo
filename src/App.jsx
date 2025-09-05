@@ -41,9 +41,9 @@ const SECTORES = [
 
 const PLANES = [
   { id: "eco200", titulo: "ECO FAST 200", img: imgEco200, specs: ["Profilaxis Dental", "Plan Básico", "200MB Reales", "Instalacion Gratis", "$20 Incluido Impuestos"] },
-  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.30 Incluido Impuestos"] },
-  { id: "power400", titulo: "POWER FAST 400", img: imgPower400, specs: ["3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
-  { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
+  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["Profilaxis Dental","1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.30 Incluido Impuestos"] },
+  { id: "power400", titulo: "POWER FAST 400", img: imgPower400, specs: ["Profilaxis Dental","3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
+  { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["Profilaxis Dental","6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
 ];
 
 /** ====== UTILS ====== */
