@@ -11,5 +11,5 @@ export default defineConfig({
       jpeg: { quality: 75  },
     }),
   ],
-  base: '/pagina_webPipo/',
+  base: '/',
 })
