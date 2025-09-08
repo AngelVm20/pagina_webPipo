@@ -610,3 +610,37 @@ h4 {
 @media (prefers-reduced-motion: reduce){
   .splash--anim{ animation: splashLife 3.5s linear forwards; }
 }
+
+/*ESTILOS DE METODO DE PAGO*/
+/* === VIDEO: responsive y más pequeño en desktop === */
+.video-wrap {
+  /* ancho fluido: mínimo 320px, 70% del viewport, tope 720px */
+  max-width: clamp(320px, 70vw, 720px);
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+
+.video-player {
+  width: 100%;
+  height: auto;          /* mantiene proporción del archivo */
+  aspect-ratio: 16 / 9;  /* asegura formato panorámico */
+  max-height: 60vh;      /* evita que sea altísimo en monitores grandes */
+  display: block;
+  background: #000;
+}
+
+/* En móviles puedes permitir un poco más de ancho si quieres */
+@media (max-width: 560px) {
+  .video-wrap {
+    max-width: 92vw;     /* ocupa más en pantallas pequeñas */
+  }
+}
+
+/* En escritorios muy anchos, aún más compacto */
+@media (min-width: 1280px) {
+  .video-wrap {
+    max-width: 640px;    /* fuerza tamaño cómodo en desktop grande */
+  }
+}

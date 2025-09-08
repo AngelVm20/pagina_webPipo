@@ -17,6 +17,8 @@ import instalacion from "./assets/webp/instalacion.webp";
 import tri from "./assets/webp/gemelosfut.webp";
 import zapping from "./assets/webp/zapping2.webp"
 
+import guiaPago from "./assets/video/pasosPago.mp4";
+
 /** ====== CONFIG (.env) ====== */
 const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593994009469";
 const MAP_LAT = Number(import.meta.env.VITE_MAP_LAT || -0.25066);
@@ -40,9 +42,9 @@ const SECTORES = [
 
 const PLANES = [
   { id: "eco200", titulo: "ECO FAST 200", img: imgEco200, specs: ["Profilaxis Dental", "Plan Básico", "200MB Reales", "Instalacion Gratis", "$20 Incluido Impuestos"] },
-  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["Profilaxis Dental","1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.20 Incluido Impuestos"] },
-  { id: "power400", titulo: "POWER FAST 400", img: imgPower4002, specs: ["Profilaxis Dental","3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
-  { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["Profilaxis Dental","6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
+  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["Profilaxis Dental", "1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.20 Incluido Impuestos"] },
+  { id: "power400", titulo: "POWER FAST 400", img: imgPower4002, specs: ["Profilaxis Dental", "3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
+  { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["Profilaxis Dental", "6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
 ];
 
 /** ====== UTILS ====== */
@@ -57,6 +59,67 @@ const mapsEmbed = (lat, lng, label) =>
   `https://www.google.com/maps?q=${lat},${lng}(${label})&z=15&output=embed`;
 
 /** ====== COMPONENTES ====== */
+// METODO DE PAGO
+/** ====== LINKS PAGO ====== */
+const PICHINCHA_BANCA_WEB = "https://www.pichincha.com/banca-web";
+const PICHINCHA_APP_IOS = "https://apps.apple.com/ec/app/pichincha-banca-movil/id999191728";
+const PICHINCHA_APP_ANDROID = "https://play.google.com/store/apps/details?id=com.yellowpepper.pichincha";
+
+/** ====== COMPONENTE: PAGA AQUÍ ====== */
+function PaySection() {
+  return (
+    <section className="section" id="paga-aqui">
+      <h2>PAGA AQUÍ</h2>
+      <p className="muted">
+        Te llevamos a la Banca Web o a la app móvil de Banco Pichincha para que realices tu pago de forma segura.
+      </p>
+
+      <div className="grid" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
+        <a className="btn btn--primary" href={PICHINCHA_BANCA_WEB} target="_blank" rel="noopener noreferrer">
+          Ir a Banca Web
+        </a>
+        <a className="btn" href={PICHINCHA_APP_ANDROID} target="_blank" rel="noopener noreferrer">
+          Abrir en Android
+        </a>
+        <a className="btn" href={PICHINCHA_APP_IOS} target="_blank" rel="noopener noreferrer">
+          Abrir en iPhone
+        </a>
+      </div>
+
+      
+    </section>
+  );
+}
+
+function PayGuideVideo() {
+  return (
+    <section className="section" id="guia-de-pago">
+      <h2>GUÍA RÁPIDA: ¿CÓMO PAGAR?</h2>
+
+      <div className="video-wrap">
+        <video
+          className="video-player"
+          controls
+          preload="metadata"
+          playsInline
+          src={guiaPago}
+        >
+          <source src={guiaPago} type="video/mp4" />
+          Tu navegador no soporta video HTML5.
+        </video>
+      </div>
+
+      <div className="video-actions">
+        <a className="btn" href={guiaPago} download>
+          Descargar video
+        </a>
+        <a className="btn btn--primary" href="#paga-aqui">
+          Ir a “PAGA AQUÍ”
+        </a>
+      </div>
+    </section>
+  );
+}
 /*SPLASH DE PANTALLA INICIAL*/
 function Splash() {
   const [gone, setGone] = useState(false);
@@ -269,6 +332,9 @@ export default function App() {
             <img src={instalacion} alt="instalacion inmediata" loading="lazy" decoding="async" />
           </div>
         </section>
+
+        <PaySection />
+        <PayGuideVideo />
 
         <MapsSection />
 
