@@ -5,12 +5,11 @@ import "./App.css";
 import logoFastnet from "./assets/webp/FASTNET_BLANCO.webp";
 import imgEco200 from "./assets/webp/ecofastproto1.webp";
 import imgSmart300 from "./assets/webp/smartfast.webp";
-import imgPower400 from "./assets/webp/powerfast.webp";
-import imgPlay500 from "./assets/webp/playfast.webp";
+import imgPower4002 from "./assets/webp/powerfast2.webp";
+import imgPlay500 from "./assets/webp/play2.webp";
 import adquirir from "./assets/webp/adquiereya.webp";
 import sonrisas from "./assets/webp/sonrisaspipo.webp";
 import scooter from "./assets/webp/scooterfastnet.webp";
-import camaras from "./assets/webp/camarasfast.webp";
 import familiafast from "./assets/webp/familiafast.webp";
 import leonElegante from "./assets/webp/leonElegante.webp";
 import soporte from "./assets/webp/soporte.webp";
@@ -42,7 +41,7 @@ const SECTORES = [
 const PLANES = [
   { id: "eco200", titulo: "ECO FAST 200", img: imgEco200, specs: ["Profilaxis Dental", "Plan Básico", "200MB Reales", "Instalacion Gratis", "$20 Incluido Impuestos"] },
   { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["Profilaxis Dental","1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.20 Incluido Impuestos"] },
-  { id: "power400", titulo: "POWER FAST 400", img: imgPower400, specs: ["Profilaxis Dental","3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
+  { id: "power400", titulo: "POWER FAST 400", img: imgPower4002, specs: ["Profilaxis Dental","3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
   { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["Profilaxis Dental","6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
 ];
 
@@ -281,7 +280,7 @@ export default function App() {
         <h2>HORARIOS DE ATENCIÓN</h2>
         <div className="horarios">
           <p>LUNES A VIERNES</p>
-          <p>08:00 am - 17:00 pm</p>
+          <p>08:00 am - 17:30 pm</p>
           <p>SABADO</p>
           <p>08:00 am - 13:00 pm</p>
         </div>
