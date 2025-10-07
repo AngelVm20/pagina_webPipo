@@ -19,6 +19,13 @@ import zapping from "./assets/webp/zapping2.webp"
 
 import guiaPago from "./assets/video/pasosPago.mp4";
 
+/*HALLOWEEN*/
+import ecofastHallo from "./assets/halloween/ecofastHallo.png";
+import smartfastHallo from "./assets/halloween/smartfastHallo.png";
+import powerfastHallo from "./assets/halloween/powerfastHallo.png";
+import playfastHallo from "./assets/halloween/playfastHallo.png";
+import familiafastHallo from "./assets/halloween/familiafastHallo.png";
+
 /** ====== CONFIG (.env) ====== */
 const WHATSAPP = import.meta.env.VITE_WHATSAPP || "593994009469";
 const MAP_LAT = Number(import.meta.env.VITE_MAP_LAT || -0.25066);
@@ -41,10 +48,10 @@ const SECTORES = [
 ];
 
 const PLANES = [
-  { id: "eco200", titulo: "ECO FAST 200", img: imgEco200, specs: ["Profilaxis Dental", "Plan Básico", "200MB Reales", "Instalacion Gratis", "$20 Incluido Impuestos"] },
-  { id: "smart300", titulo: "SMART FAST 300", img: imgSmart300, specs: ["Profilaxis Dental", "1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.20 Incluido Impuestos"] },
-  { id: "power400", titulo: "POWER FAST 400", img: imgPower4002, specs: ["Profilaxis Dental", "3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
-  { id: "play500", titulo: "PLAY FAST 500", img: imgPlay500, specs: ["Profilaxis Dental", "6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
+  { id: "eco200", titulo: "ECO FAST 200", img: ecofastHallo, specs: ["Profilaxis Dental", "Plan Básico", "200MB Reales", "Instalacion Gratis", "$20 Incluido Impuestos"] },
+  { id: "smart300", titulo: "SMART FAST 300", img: smartfastHallo, specs: ["Profilaxis Dental", "1 Punto de red", "2 Meses de Streaming Gratis", "300MB Reales", "Instalacion Gratis", "$23.20 Incluido Impuestos"] },
+  { id: "power400", titulo: "POWER FAST 400", img: powerfastHallo, specs: ["Profilaxis Dental", "3 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado - Zapping", "Wifi 6", "400MB Reales", "Instalacion Gratis", "$25.75 Incluido Impuestos"] },
+  { id: "play500", titulo: "PLAY FAST 500", img: playfastHallo, specs: ["Profilaxis Dental", "6 Meses con 25% Descuento", "1 Punto de red", "Streaming Ilimitado para 3 dispositivos - Zapping", "1 Router adicional", "Wifi 6", "500MB Reales", "Instalacion Gratis", "$30.90 Incluido Impuestos"] },
 ];
 
 /** ====== UTILS ====== */
@@ -86,7 +93,7 @@ function PaySection() {
         </a>
       </div>
 
-      
+
     </section>
   );
 }
@@ -132,7 +139,7 @@ function Splash() {
   return (
     <div className="splash splash--anim" aria-hidden="true" onAnimationEnd={() => setGone(true)}>
       {/* ↑ sólo añadimos prioridad de carga; NO tocamos clases ni estilos */}
-      <img src={familiafast} alt="" className="splash__img" loading="eager" decoding="async" fetchpriority="high" />
+      <img src={familiafastHallo} alt="" className="splash__img" loading="eager" decoding="async" fetchpriority="high" />
     </div>
   );
 }
@@ -297,6 +304,10 @@ function Footer() {
 
 export default function App() {
   const [modalPlan, setModalPlan] = useState(null);
+  useEffect(() => {
+    document.body.classList.add('halloween');
+    return () => document.body.classList.remove('halloween');
+  }, []);
   return (
     <>
       <Splash />

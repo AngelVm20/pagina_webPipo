@@ -127,7 +127,7 @@
 
 /*GENERAL TIPOS DE LETRAS*/
 /*H2*/
-.horarios{
+.horarios {
   color: #FFD700;
   text-shadow: 2px 2px 8px #1fa24b;
   text-align: center;
@@ -585,30 +585,50 @@ h4 {
 
 /*splash de bienvenida*/
 /* Animación normal: 1s visible + 1s fade */
-@keyframes splashLife{
-  0%, 49% { opacity: 1; }   /* ~1s visible */
-  100%    { opacity: 0; }   /* ~1s difuminado */
+@keyframes splashLife {
+
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  /* ~1s visible */
+  100% {
+    opacity: 0;
+  }
+
+  /* ~1s difuminado */
 }
 
-.splash{
-  position: fixed; inset:0; z-index:9999;
-  display:grid; place-items:center;
-  background:#0a1f13; opacity:1;
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #0a1f13;
+  opacity: 1;
 }
 
-.splash__img{
-  width:min(90vw, 520px); height:auto; border-radius:16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 24px rgba(255,215,0,.55);
+.splash__img {
+  width: min(90vw, 520px);
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 0 24px rgba(255, 215, 0, .55);
 }
 
 /* Si NO hay preferencia de reducir movimiento → animación de 2s */
-@media (prefers-reduced-motion: no-preference){
-  .splash--anim{ animation: splashLife 3.5s ease forwards; }
+@media (prefers-reduced-motion: no-preference) {
+  .splash--anim {
+    animation: splashLife 3.5s ease forwards;
+  }
 }
 
 /* Si SÍ hay preferencia → animación casi instantánea (pero dispara animationend) */
-@media (prefers-reduced-motion: reduce){
-  .splash--anim{ animation: splashLife 3.5s linear forwards; }
+@media (prefers-reduced-motion: reduce) {
+  .splash--anim {
+    animation: splashLife 3.5s linear forwards;
+  }
 }
 
 /*ESTILOS DE METODO DE PAGO*/
@@ -619,14 +639,17 @@ h4 {
   margin: 0 auto 12px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
 }
 
 .video-player {
   width: 100%;
-  height: auto;          /* mantiene proporción del archivo */
-  aspect-ratio: 16 / 9;  /* asegura formato panorámico */
-  max-height: 60vh;      /* evita que sea altísimo en monitores grandes */
+  height: auto;
+  /* mantiene proporción del archivo */
+  aspect-ratio: 16 / 9;
+  /* asegura formato panorámico */
+  max-height: 60vh;
+  /* evita que sea altísimo en monitores grandes */
   display: block;
   background: #000;
 }
@@ -634,13 +657,159 @@ h4 {
 /* En móviles puedes permitir un poco más de ancho si quieres */
 @media (max-width: 560px) {
   .video-wrap {
-    max-width: 92vw;     /* ocupa más en pantallas pequeñas */
+    max-width: 92vw;
+    /* ocupa más en pantallas pequeñas */
   }
 }
 
 /* En escritorios muy anchos, aún más compacto */
 @media (min-width: 1280px) {
   .video-wrap {
-    max-width: 640px;    /* fuerza tamaño cómodo en desktop grande */
+    max-width: 640px;
+    /* fuerza tamaño cómodo en desktop grande */
   }
+}
+
+/*HALLOWEN*/
+/* === HALLOWEEN THEME OVERRIDES (morados + amarillos) === */
+body.halloween {
+  /* Reutilizo tus variables “green_*” para no tocar componentes */
+  --green-800: #3b0a45;
+  /* morado oscuro (header) */
+  --green-700: #54116a;
+  /* morado medio */
+  --green-600: #7a1db3;
+  /* morado acento (botones primarios) */
+  --bg: #0b0612;
+  /* fondo base */
+  --card: #140b1f;
+  /* cartas / modales */
+  --text: #f7ecff;
+  /* texto principal */
+  --muted: #cdb8ea;
+  /* texto secundario */
+  --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+}
+
+/* Fondo general en gradiente púrpura */
+body.halloween {
+  background: linear-gradient(180deg, #0b0612, #1a0f2e);
+}
+
+/* TITULARES y horarios: dorado con glow púrpura */
+body.halloween h2,
+body.halloween .horarios {
+  color: #FFD700;
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, .85),
+    0 0 24px rgba(122, 29, 179, .55);
+}
+
+/* HEADER: ya toma --green-800, pero ajusto redes (estaban hardcode) */
+body.halloween .social {
+  background: #2a0b33;
+}
+
+body.halloween .social:hover {
+  background: #3a0e45;
+}
+
+body.halloween .social__icon {
+  fill: #ffecc2;
+  /* tono cálido para contrastar */
+}
+
+/* BOTONES */
+body.halloween .btn {
+  background: #3a0e45;
+  /* morado oscuro */
+}
+
+body.halloween .btn:hover {
+  background: #54116a;
+}
+
+body.halloween .btn--primary {
+  background: var(--green-600);
+  /* morado acento */
+}
+
+body.halloween .btn--primary:hover {
+  background: #8f2ad6;
+  /* un poco más claro al hover */
+}
+
+/* TARJETAS (flip) — misma estructura, solo glow morado + dorado */
+body.halloween .card {
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, .35),
+    0 0 18px rgba(122, 29, 179, .5),
+    0 0 12px rgba(255, 215, 0, .35);
+}
+
+body.halloween .card__back {
+  background: var(--card);
+}
+
+/* PROMOS — glow combinado morado/dorado */
+body.halloween .promos>img {
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, .35),
+    0 0 18px rgba(122, 29, 179, .55);
+}
+
+body.halloween .promos>img:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 3px #FFD700,
+    0 14px 32px rgba(0, 0, 0, .28),
+    0 0 24px rgba(122, 29, 179, .55);
+}
+
+/* MAPS — borde y glow morado + dorado */
+body.halloween .maps {
+  border: 1px solid #3f1652;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, .35),
+    0 0 18px rgba(122, 29, 179, .5),
+    0 0 14px rgba(255, 215, 0, .35);
+}
+
+/* MODAL */
+body.halloween .modal {
+  background: #1b0f29;
+  border: 1px solid #3f1652;
+}
+
+/* CTA flotante — pequeño glow temático */
+body.halloween .floating-cta {
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, .35),
+    0 0 18px rgba(122, 29, 179, .45);
+}
+
+/* FOOTER */
+body.halloween .footer {
+  background: #11081a;
+  border-top: 1px solid #3f1652;
+  color: var(--muted);
+}
+
+/* SPLASH de bienvenida (fondo y glow) */
+body.halloween .splash {
+  background: #11081a;
+}
+
+body.halloween .splash__img {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, .35),
+    0 0 24px rgba(122, 29, 179, .55),
+    0 0 16px rgba(255, 215, 0, .35);
+}
+
+/* VIDEO wrap — sutil ajuste de sombra */
+body.halloween .video-wrap {
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, .2),
+    0 0 16px rgba(122, 29, 179, .4);
 }
