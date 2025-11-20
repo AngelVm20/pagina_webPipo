@@ -1,12 +1,14 @@
 :root {
-  --green-800: #0f5d2c;
-  --green-700: #197a3a;
-  --green-600: #1fa24b;
+  --green-800: #064326;
+  /* verde pino oscuro */
+  --green-700: #0b5f32;
+  --green-600: #0fa958;
+  /* acento verde */
   --bg: #0c1810;
   --card: #0e2115;
   --text: #e9f5ec;
   --muted: #b7d2c0;
-  --shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   --radius: 16px;
 }
 
@@ -37,8 +39,6 @@
   min-width: 0;
 }
 
-/* permite que el centro se ajuste */
-
 .brand__logo {
   /* grande en desktop, más chico en móvil */
   height: clamp(40px, 7vw, 90px);
@@ -57,7 +57,7 @@
   font-weight: 700;
   text-align: center;
   line-height: 1.2;
-  font-size: clamp(.85rem, 2vw, 1.05rem);
+  font-size: clamp(0.85rem, 2vw, 1.05rem);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -72,8 +72,8 @@
 
 .follow-label {
   color: #e9f5ec;
-  opacity: .9;
-  font-size: .9rem;
+  opacity: 0.9;
+  font-size: 0.9rem;
   white-space: nowrap;
 }
 
@@ -90,7 +90,7 @@
   height: 34px;
   border-radius: 999px;
   background: #0a3f1e;
-  transition: transform .15s ease, background .15s ease;
+  transition: transform 0.15s ease, background 0.15s ease;
 }
 
 .social:hover {
@@ -116,254 +116,124 @@
     display: none;
   }
 
-  /* ahorra espacio en móvil */
   .social {
     width: 30px;
     height: 30px;
   }
-
-  /* iconos un poco más chicos */
 }
 
 /*GENERAL TIPOS DE LETRAS*/
-/*H2*/
 .horarios {
-  color: #FFD700;
+  color: #ffd700;
   text-shadow: 2px 2px 8px #1fa24b;
   text-align: center;
   font-weight: 700;
-  letter-spacing: .2px;
-  line-height: .5;
-  /* grande en desktop, razonable en móvil */
+  letter-spacing: 0.2px;
+  line-height: 0.5;
   font-size: clamp(1rem, 6vw, 3rem);
   margin: 0 8px 18px;
-  /* pequeño padding lateral para que no “choque” en móvil */
 }
 
 h2 {
-  color: #FFD700;
+  color: #ffd700;
   text-shadow: 2px 2px 8px #1fa24b;
   text-align: center;
   font-weight: 800;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   line-height: 1.1;
-  /* grande en desktop, razonable en móvil */
   font-size: clamp(1.6rem, 6vw, 5rem);
   margin: 0 8px 18px;
-  /* pequeño padding lateral para que no “choque” en móvil */
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-  height: 100%
+  height: 100%;
 }
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #07130b, rgb(11, 34, 20));
+  background: linear-gradient(180deg,
+      #03140a 0%,
+      #0d2b18 45%,
+      #2a1111 100%);
   color: var(--text);
-  font-family: system-ui, Segoe UI, Roboto, Arial
+  font-family: system-ui, Segoe UI, Roboto, Arial;
 }
 
 img {
   max-width: 100%;
-  display: block
+  display: block;
 }
 
 a {
   color: inherit;
-  text-decoration: none
+  text-decoration: none;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  margin: 0 0 .5rem
+  margin: 0 0 0.5rem;
 }
 
 .muted {
   color: var(--muted);
-  font-size: .9rem
+  font-size: 0.9rem;
 }
 
 /* Layout */
 .container {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px
+  margin: 16px auto 32px;
+  padding: 16px;
+  position: relative;
+  z-index: 2;
 }
 
 .section {
-  margin: 32px 0
+  margin: 32px 0;
 }
 
 .section>h2 {
   font-size: 1.6rem;
-  letter-spacing: .5px;
-  margin-bottom: 16px
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
 }
 
-
+/* Panel tipo glass */
+.section--panel {
+  position: relative;
+  z-index: 2;
+  padding: 20px 18px 24px;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.04), transparent) border-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.6)) border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    0 0 18px rgba(199, 31, 59, 0.35),
+    0 0 24px rgba(15, 169, 88, 0.25);
+}
 
 .brand__logo {
   height: 60px;
-  width: auto
+  width: auto;
 }
 
 .brand__claim {
-  font-size: .9rem;
-  opacity: .9
-}
-
-.header__socials {
-  display: flex;
-  gap: 12px
-}
-
-.social {
-  display: grid;
-  place-items: center;
-  background: #0a3f1e;
-  border-radius: 999px;
-  width: 36px;
-  height: 36px;
-  transition: transform .15s ease, background .15s ease
-}
-
-.social:hover {
-  transform: translateY(-2px);
-  background: #0c5328
-}
-
-.social__icon {
-  width: 18px;
-  height: 18px;
-  fill: #e8ffe8
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 /* Grid de planes */
-.grid {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(4, minmax(0, 1fr))
-}
-
-@media (max-width:1024px) {
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr))
-  }
-}
-
-@media (max-width:560px) {
-  .grid {
-    grid-template-columns: 1fr
-  }
-}
-
-/* Card con flip */
-.card {
-  position: relative;
-  height: 420px;
-  perspective: 1200px;
-  /* define la profundidad */
-  cursor: pointer;
-  border-radius: 16px;
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, .35),
-    /* sombra normal oscura */
-    0 0 18px rgba(255, 215, 0, .55);
-}
-
-/* Contenedor interno que rota */
-.card__inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 1s ease-in-out;
-  border-radius: 16px;
-}
-
-/* Estado girado */
-.card.card--flipped .card__inner {
-  transform: rotateY(180deg);
-}
-
-/* Caras */
-.card__face {
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Frente */
-.card__front {
-  transform: rotateY(0deg);
-  z-index: 2;
-}
-
-.card__front--image {
-  padding: 0;
-}
-
-.card__img--full {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-/* Reverso */
-.card__back {
-  transform: rotateY(180deg);
-  background: var(--card);
-  padding: 20px;
-}
-
-/* Contenido reverso */
-.card__back-content {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  height: 100%;
-}
-
-.specs {
-  margin: 0;
-  padding-left: 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.tap {
-  opacity: .75;
-  font-size: .9rem;
-  text-align: center;
-  margin-top: auto;
-}
-
-/* Accesibilidad: sin animación si el SO lo pide */
-@media (prefers-reduced-motion: reduce) {
-  .card__inner {
-    transition: transform 1s ease-in-out;
-  }
-}
-
 .grid {
   display: grid;
   gap: 16px;
@@ -386,7 +256,6 @@ h4 {
     width: 100%;
     height: auto;
     aspect-ratio: 2 / 3;
-    /* más alto que 3/4, suele ir mejor con tus artes */
     max-width: 520px;
     margin: 0 auto;
   }
@@ -401,11 +270,109 @@ h4 {
 
   .card__img--full {
     object-fit: cover;
-    /* llena el card */
     object-position: top;
-    /* muestra la parte superior (donde está el título/precio) */
     width: 100%;
     height: 100%;
+  }
+}
+
+/* Card con flip */
+.card {
+  position: relative;
+  width: 100%;
+  /* hacemos la card alta tipo afiche */
+  aspect-ratio: 3 / 4;
+  max-width: 520px;
+  margin: 0 auto;
+  perspective: 1200px;
+  cursor: pointer;
+  border-radius: 22px;
+  background: transparent;          /* sin fondo extra */
+  box-shadow: none;                 /* el glow va en la imagen */
+}
+
+.card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+  border-radius: 22px;
+}
+
+.card.card--flipped .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__face {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.card__front--image {
+  padding: 0;
+  background: transparent;
+}
+
+
+.card__img--full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.65),
+    0 0 26px rgba(255, 224, 138, 0.6),
+    0 0 32px rgba(15, 169, 88, 0.45);
+}
+
+.card__back {
+  transform: rotateY(180deg);
+  background: rgba(7, 30, 17, 0.96);
+  padding: 20px;
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.7),
+    0 0 22px rgba(15, 169, 88, 0.5);
+}
+
+.card__back-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.specs {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tap {
+  opacity: 0.75;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card__inner {
+    transition: transform 1s ease-in-out;
   }
 }
 
@@ -413,41 +380,32 @@ h4 {
 .promos {
   display: grid;
   gap: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr))
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
   .promos {
-    grid-template-columns: 1fr
+    grid-template-columns: 1fr;
   }
 }
 
-/* Imágenes dentro del grid de promociones */
 .promos>img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 16px;
-  /* bordes redondeados */
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, .35),
-    /* sombra normal oscura */
-    0 0 18px rgba(255, 215, 0, .55);
-  /* sombreado amarillo */
-  transition: transform .18s ease, box-shadow .18s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(255, 215, 0, 0.55);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
-/* Un toquecito de interacción al pasar el mouse (desktop) */
 .promos>img:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 0 0 3px #FFD700,
-    0 14px 32px rgba(0, 0, 0, .28),
-    0 0 20px rgba(255, 215, 0, .45);
+  box-shadow: 0 0 0 3px #ffd700, 0 14px 32px rgba(0, 0, 0, 0.28),
+    0 0 20px rgba(255, 215, 0, 0.45);
 }
 
-/* Si en móvil quieres un radio un poco menor */
-@media (max-width:560px) {
+@media (max-width: 560px) {
   .promos>img {
     border-radius: 12px;
   }
@@ -462,38 +420,35 @@ h4 {
   border-radius: 999px;
   display: inline-block;
   cursor: pointer;
-  transition: transform .12s ease, background .12s ease
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 
 .btn:hover {
   transform: translateY(-1px);
-  background: #196437
+  background: #196437;
 }
 
 .btn--primary {
-  background: var(--green-600)
+  background: var(--green-600);
 }
 
 .btn--primary:hover {
-  background: #28b356
+  background: #28b356;
 }
 
 .btn--center {
   display: block;
-  /* toma su propia línea */
   width: fit-content;
-  /* no se estira */
   margin: 12px auto 0;
-  /* centra horizontalmente */
 }
 
 /* Modal */
 .modal__overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(2px);
-  z-index: 20
+  z-index: 20;
 }
 
 .modal {
@@ -508,7 +463,7 @@ h4 {
   overflow: auto;
   padding: 20px;
   z-index: 21;
-  box-shadow: var(--shadow)
+  box-shadow: var(--shadow);
 }
 
 .sectores {
@@ -517,13 +472,13 @@ h4 {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px
+  gap: 8px;
 }
 
 .modal__actions {
   display: flex;
   gap: 10px;
-  justify-content: flex-end
+  justify-content: flex-end;
 }
 
 /* Maps */
@@ -533,15 +488,14 @@ h4 {
   border: 1px solid #163a23;
   box-shadow: var(--shadow);
   margin-bottom: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, .35),
-    /* sombra normal oscura */
-    0 0 18px rgba(255, 215, 0, .55);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(255, 215, 0, 0.55);
 }
 
 .maps iframe {
   width: 100%;
   height: 360px;
-  border: 0
+  border: 0;
 }
 
 /* CTA flotante */
@@ -555,16 +509,15 @@ h4 {
   border-radius: 50%;
   box-shadow: var(--shadow);
   display: block;
-  overflow: hidden
+  overflow: hidden;
 }
 
 .floating-cta img {
   width: 100%;
   height: 100%;
-  object-fit: cover
+  object-fit: cover;
 }
 
-/* Footer */
 /* ===== FOOTER ===== */
 .footer {
   margin-top: 40px;
@@ -573,18 +526,18 @@ h4 {
   color: var(--muted);
   text-align: center;
   border-top: 1px solid #12361f;
+  position: relative;
+  z-index: 5;
 }
 
 .footer__brand img {
   height: clamp(60px, 8vw, 110px);
-  /* más grande y fluido */
   width: auto;
   display: block;
   margin: 0 auto 10px;
 }
 
 /*splash de bienvenida*/
-/* Animación normal: 1s visible + 1s fade */
 @keyframes splashLife {
 
   0%,
@@ -592,12 +545,9 @@ h4 {
     opacity: 1;
   }
 
-  /* ~1s visible */
   100% {
     opacity: 0;
   }
-
-  /* ~1s difuminado */
 }
 
 .splash {
@@ -614,202 +564,367 @@ h4 {
   width: min(90vw, 520px);
   height: auto;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 0 24px rgba(255, 215, 0, .55);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(255, 215, 0, 0.55);
 }
 
-/* Si NO hay preferencia de reducir movimiento → animación de 2s */
 @media (prefers-reduced-motion: no-preference) {
   .splash--anim {
     animation: splashLife 3.5s ease forwards;
   }
 }
 
-/* Si SÍ hay preferencia → animación casi instantánea (pero dispara animationend) */
 @media (prefers-reduced-motion: reduce) {
   .splash--anim {
     animation: splashLife 3.5s linear forwards;
   }
 }
 
-/*ESTILOS DE METODO DE PAGO*/
-/* === VIDEO: responsive y más pequeño en desktop === */
+/* VIDEO: responsive */
 .video-wrap {
-  /* ancho fluido: mínimo 320px, 70% del viewport, tope 720px */
   max-width: clamp(320px, 70vw, 720px);
   margin: 0 auto 12px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .video-player {
   width: 100%;
   height: auto;
-  /* mantiene proporción del archivo */
   aspect-ratio: 16 / 9;
-  /* asegura formato panorámico */
   max-height: 60vh;
-  /* evita que sea altísimo en monitores grandes */
   display: block;
   background: #000;
 }
 
-/* En móviles puedes permitir un poco más de ancho si quieres */
+.video-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 @media (max-width: 560px) {
   .video-wrap {
     max-width: 92vw;
-    /* ocupa más en pantallas pequeñas */
   }
 }
 
-/* En escritorios muy anchos, aún más compacto */
 @media (min-width: 1280px) {
   .video-wrap {
     max-width: 640px;
-    /* fuerza tamaño cómodo en desktop grande */
   }
 }
 
-/*HALLOWEN*/
-/* === HALLOWEEN THEME OVERRIDES (morados + amarillos) === */
-body.halloween {
-  /* Reutilizo tus variables “green_*” para no tocar componentes */
-  --green-800: #3b0a45;
-  /* morado oscuro (header) */
-  --green-700: #54116a;
-  /* morado medio */
-  --green-600: #7a1db3;
-  /* morado acento (botones primarios) */
-  --bg: #0b0612;
-  /* fondo base */
-  --card: #140b1f;
-  /* cartas / modales */
-  --text: #f7ecff;
-  /* texto principal */
-  --muted: #cdb8ea;
-  /* texto secundario */
-  --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+/* === NAVIDAD THEME OVERRIDES (rojo + verde + dorado) === */
+body.navidad {
+  --green-800: #064326;
+  --green-700: #0b5f32;
+  --green-600: #c71f3b;
+  /* rojo navideño para primario */
+  --bg: #03140a;
+  --card: #071e11;
+  --text: #fefcf6;
+  --muted: #d7e8dd;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  background: linear-gradient(180deg,
+      #03140a 0%,
+      #0d2b18 45%,
+      #2a1111 100%);
 }
 
-/* Fondo general en gradiente púrpura */
-body.halloween {
-  background: linear-gradient(180deg, #0b0612, #1a0f2e);
+/* TITULARES y horarios navideños */
+body.navidad h2,
+body.navidad .horarios {
+  color: #ffe08a;
+  text-shadow: 0 0 10px rgba(255, 224, 138, 0.85),
+    0 0 24px rgba(199, 31, 59, 0.7),
+    0 0 32px rgba(15, 169, 88, 0.5);
 }
 
-/* TITULARES y horarios: dorado con glow púrpura */
-body.halloween h2,
-body.halloween .horarios {
-  color: #FFD700;
-  text-shadow:
-    0 0 10px rgba(255, 215, 0, .85),
-    0 0 24px rgba(122, 29, 179, .55);
+/* HEADER redes */
+body.navidad .social {
+  background: #133b25;
 }
 
-/* HEADER: ya toma --green-800, pero ajusto redes (estaban hardcode) */
-body.halloween .social {
-  background: #2a0b33;
+body.navidad .social:hover {
+  background: #1c5536;
 }
 
-body.halloween .social:hover {
-  background: #3a0e45;
-}
-
-body.halloween .social__icon {
-  fill: #ffecc2;
-  /* tono cálido para contrastar */
+body.navidad .social__icon {
+  fill: #fff9e6;
 }
 
 /* BOTONES */
-body.halloween .btn {
-  background: #3a0e45;
-  /* morado oscuro */
+body.navidad .btn {
+  background: #084326;
 }
 
-body.halloween .btn:hover {
-  background: #54116a;
+body.navidad .btn:hover {
+  background: #0b5f32;
 }
 
-body.halloween .btn--primary {
-  background: var(--green-600);
-  /* morado acento */
+/* Primario en rojo */
+body.navidad .btn--primary {
+  background: #c71f3b;
 }
 
-body.halloween .btn--primary:hover {
-  background: #8f2ad6;
-  /* un poco más claro al hover */
+body.navidad .btn--primary:hover {
+  background: #e02b47;
 }
 
-/* TARJETAS (flip) — misma estructura, solo glow morado + dorado */
-body.halloween .card {
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, .35),
-    0 0 18px rgba(122, 29, 179, .5),
-    0 0 12px rgba(255, 215, 0, .35);
+/* TARJETAS */
+body.navidad .card {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(15, 169, 88, 0.45),
+    0 0 14px rgba(255, 215, 0, 0.45);
 }
 
-body.halloween .card__back {
+body.navidad .card__back {
   background: var(--card);
 }
 
-/* PROMOS — glow combinado morado/dorado */
-body.halloween .promos>img {
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, .35),
-    0 0 18px rgba(122, 29, 179, .55);
+/* PROMOS */
+body.navidad .promos>img {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(255, 215, 0, 0.55);
 }
 
-body.halloween .promos>img:hover {
+body.navidad .promos>img:hover {
   transform: translateY(-3px);
-  box-shadow:
-    0 0 0 3px #FFD700,
-    0 14px 32px rgba(0, 0, 0, .28),
-    0 0 24px rgba(122, 29, 179, .55);
+  box-shadow: 0 0 0 3px #ffe08a, 0 14px 32px rgba(0, 0, 0, 0.28),
+    0 0 24px rgba(199, 31, 59, 0.65);
 }
 
-/* MAPS — borde y glow morado + dorado */
-body.halloween .maps {
-  border: 1px solid #3f1652;
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, .35),
-    0 0 18px rgba(122, 29, 179, .5),
-    0 0 14px rgba(255, 215, 0, .35);
+/* MAPS */
+body.navidad .maps {
+  border: 1px solid #146838;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(15, 169, 88, 0.5),
+    0 0 14px rgba(255, 215, 0, 0.35);
 }
 
 /* MODAL */
-body.halloween .modal {
-  background: #1b0f29;
-  border: 1px solid #3f1652;
+body.navidad .modal {
+  background: #071e11;
+  border: 1px solid #146838;
 }
 
-/* CTA flotante — pequeño glow temático */
-body.halloween .floating-cta {
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, .35),
-    0 0 18px rgba(122, 29, 179, .45);
+/* CTA flotante */
+body.navidad .floating-cta {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(199, 31, 59, 0.45),
+    0 0 12px rgba(15, 169, 88, 0.45);
 }
 
 /* FOOTER */
-body.halloween .footer {
-  background: #11081a;
-  border-top: 1px solid #3f1652;
+body.navidad .footer {
+  background: #04140b;
+  border-top: 1px solid #146838;
   color: var(--muted);
 }
 
-/* SPLASH de bienvenida (fondo y glow) */
-body.halloween .splash {
-  background: #11081a;
+/* SPLASH */
+body.navidad .splash {
+  background: #04140b;
 }
 
-body.halloween .splash__img {
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, .35),
-    0 0 24px rgba(122, 29, 179, .55),
-    0 0 16px rgba(255, 215, 0, .35);
+body.navidad .splash__img {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(199, 31, 59, 0.55),
+    0 0 16px rgba(255, 215, 0, 0.5);
 }
 
-/* VIDEO wrap — sutil ajuste de sombra */
-body.halloween .video-wrap {
-  box-shadow:
-    0 8px 24px rgba(0, 0, 0, .2),
-    0 0 16px rgba(122, 29, 179, .4);
+/* VIDEO */
+body.navidad .video-wrap {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2),
+    0 0 16px rgba(15, 169, 88, 0.35);
+}
+
+/* === LUCES NAVIDEÑAS === */
+.xmas-lights {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 6px 0 2px;
+  pointer-events: none;
+}
+
+.xmas-lights::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #12341f, #1c5536, #12341f);
+  opacity: 0.9;
+}
+
+.xmas-bulb {
+  position: relative;
+  width: 14px;
+  height: 22px;
+  border-radius: 999px;
+  transform-origin: top center;
+  animation: bulbSwing 2.7s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+}
+
+/* Colores variados */
+.xmas-bulb:nth-child(3n + 1) {
+  background: #ff4b5c;
+  /* rojo */
+  box-shadow: 0 0 10px rgba(255, 75, 92, 0.75);
+}
+
+.xmas-bulb:nth-child(3n + 2) {
+  background: #ffe08a;
+  /* dorado */
+  box-shadow: 0 0 10px rgba(255, 224, 138, 0.75);
+}
+
+.xmas-bulb:nth-child(3n + 3) {
+  background: #3dd68c;
+  /* verde */
+  box-shadow: 0 0 10px rgba(61, 214, 140, 0.75);
+}
+
+/* tapita arriba del foco */
+.xmas-bulb::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 10px;
+  height: 5px;
+  border-radius: 4px;
+  background: #202b23;
+  transform: translateX(-50%);
+}
+
+/* Animación de balanceo */
+@keyframes bulbSwing {
+  0% {
+    transform: translateY(0) rotate(-4deg);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: translateY(2px) rotate(4deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) rotate(-2deg);
+    opacity: 0.85;
+  }
+}
+
+/* === NIEVE SUAVE === */
+body.navidad::before,
+body.navidad::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3; /* antes era 1 */
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 1.8px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 2.2px, transparent 1px);
+  background-size: 90px 90px, 140px 140px;
+  animation: snowFall 22s linear infinite;
+  opacity: 0.22;
+}
+
+body.navidad::after {
+  animation-duration: 32s;
+  opacity: 0.17;
+  background-size: 70px 70px, 120px 120px;
+}
+
+@keyframes snowFall {
+  0% {
+    transform: translateY(-10%);
+  }
+
+  100% {
+    transform: translateY(20%);
+  }
+}
+
+/* asegurar que header / footer / CTA estén por encima de la nieve */
+.header,
+.footer,
+.floating-cta {
+  position: relative;
+  z-index: 5;
+}
+
+/* === NIEVE EN EL SPLASH === */
+.splash::before,
+.splash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10000;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.9) 2px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 3px, transparent 1px);
+  background-size: 80px 80px, 140px 140px;
+  animation: splashSnow 16s linear infinite;
+  opacity: 0.25;
+}
+
+.splash::after {
+  animation-duration: 26s;
+  opacity: 0.18;
+  background-size: 60px 60px, 110px 110px;
+}
+
+@keyframes splashSnow {
+  0% {
+    transform: translateY(-15%);
+  }
+
+  100% {
+    transform: translateY(20%);
+  }
+}
+
+/* === LUCES EN EL SPLASH (ARRIBA DE LA IMAGEN) === */
+.splash {
+  position: fixed !important;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Contenedor de luces dentro del splash */
+.splash-lights-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 11000; /* más arriba que la nieve */
+}
+
+.splash-lights-container .xmas-lights {
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.splash-lights-container .xmas-bulb {
+  animation-duration: 2s;
 }
