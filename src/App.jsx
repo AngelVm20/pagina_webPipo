@@ -3,19 +3,24 @@ import "./App.css";
 
 /** === IMPORTA TUS IMÁGENES DESDE src/assets === */
 import logoFastnet from "./assets/webp/FASTNET_BLANCO.webp";
-import imgEco200 from "./assets/webp/ecofastproto1.webp";
-import imgSmart300 from "./assets/webp/smartfast.webp";
-import imgPower4002 from "./assets/webp/powerfast2.webp";
-import imgPlay500 from "./assets/webp/play2.webp";
+
+import imgEco200 from "./assets/nuevos/ecofastnuevo.jpeg";
+import imgSmart300 from "./assets/nuevos/smartfastnuevo.jpeg";
+import imgPower4002 from "./assets/nuevos/powerfastnuevo.jpeg";
+import imgPlay500 from "./assets/nuevos/playfastnuevo.jpeg";
+
+/* promociones */
+import sonrisas from "./assets/nuevos/sonrisasfast.jpeg";
+import scooter from "./assets/nuevos/labfast.jpeg";
+import zapping from "./assets/nuevos/beneficios2fast.jpeg"
+
 import adquirir from "./assets/webp/adquiereya.webp";
-import sonrisas from "./assets/webp/sonrisaspipo.webp";
-import scooter from "./assets/webp/scooterfastnet.webp";
+
 import familiafast from "./assets/webp/familiafast.webp";
 import leonElegante from "./assets/webp/leonElegante.webp";
 import soporte from "./assets/webp/soporte.webp";
 import instalacion from "./assets/webp/instalacion.webp";
 import tri from "./assets/webp/gemelosfut.webp";
-import zapping from "./assets/webp/zapping2.webp"
 
 import guiaPago from "./assets/video/pasosPago.mp4";
 
