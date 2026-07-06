@@ -30,6 +30,8 @@ const MAP_LAT = Number(import.meta.env.VITE_MAP_LAT || -0.25066);
 const MAP_LNG = Number(import.meta.env.VITE_MAP_LNG || -79.17138);
 const MAP_PLACE = encodeURIComponent(import.meta.env.VITE_MAP_PLACE || "FASTNET Santo Domingo");
 const DOMAIN = import.meta.env.VITE_DOMAIN || "fastnet.com.ec";
+const PRIVACY_NOTICE_URL = `${import.meta.env.BASE_URL}aviso-privacidad.html`;
+const RIGHTS_FORM_URL = `${import.meta.env.BASE_URL}formulario-derechos-proteccion-datos-fastnet.pdf`;
 
 /** ====== DATOS ====== */
 const SOCIALS = [
@@ -272,6 +274,45 @@ function MapsSection() {
   );
 }
 
+
+function PrivacyDocumentsSection() {
+  return (
+    <section className="section privacy-section" id="privacidad">
+      <h2>PRIVACIDAD Y PROTECCIÓN DE DATOS</h2>
+      <p className="muted privacy-intro">
+        Consulta el Aviso de Privacidad de FASTNET y descarga el formulario para ejercer tus derechos de protección de datos personales.
+      </p>
+
+      <div className="privacy-docs">
+        <a
+          className="privacy-card"
+          href={PRIVACY_NOTICE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="privacy-card__icon">🔐</span>
+          <strong>Aviso de Privacidad</strong>
+          <small>Ver documento publicado</small>
+        </a>
+
+        <a
+          className="privacy-card privacy-card--primary"
+          href={RIGHTS_FORM_URL}
+          download
+        >
+          <span className="privacy-card__icon">📄</span>
+          <strong>Formulario de derechos</strong>
+          <small>Descargar PDF para llenar</small>
+        </a>
+      </div>
+
+      <p className="muted privacy-note">
+        El formulario puede enviarse al correo del Delegado de Protección de Datos o entregarse físicamente en las oficinas de FASTNET.
+      </p>
+    </section>
+  );
+}
+
 function FloatingCTA() {
   return (
     <a
@@ -295,6 +336,10 @@ function Footer() {
         <img src={logoFastnet} alt="FASTNET" loading="lazy" decoding="async" />
       </div>
       <p>© {year} FASTNET. Todos los derechos reservados.</p>
+      <div className="footer__links">
+        <a href={PRIVACY_NOTICE_URL} target="_blank" rel="noopener noreferrer">Aviso de Privacidad</a>
+        <a href={RIGHTS_FORM_URL} download>Formulario de derechos</a>
+      </div>
       <p className="muted">Theme by FASTNET.ec</p>
     </footer>
   );
@@ -340,6 +385,7 @@ export default function App() {
 
         <PaySection />
         <PayGuideVideo />
+        <PrivacyDocumentsSection />
 
         <MapsSection />
 

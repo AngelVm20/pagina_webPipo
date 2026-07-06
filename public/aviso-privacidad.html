@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviso de Privacidad | FASTNET</title>
+  <meta name="description" content="Aviso de Privacidad de FASTNET, nombre comercial de NETQUICK S.A., conforme a la Ley Orgánica de Protección de Datos Personales del Ecuador." />
+  <style>
+    :root {
+      --green-dark: #0b5f2d;
+      --green-main: #0f7a3a;
+      --green-light: #e8f6ee;
+      --green-soft: #f4fbf7;
+      --text: #1f2933;
+      --muted: #5b6773;
+      --white: #ffffff;
+      --line: #d9eadf;
+      --shadow: 0 12px 30px rgba(0,0,0,.08);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #f8fff9 0%, #ffffff 50%, #eef8f2 100%);
+      color: var(--text);
+      line-height: 1.62;
+    }
+    .topbar { background: var(--green-dark); color: var(--white); padding: 8px 20px; font-size: 14px; text-align: center; }
+    header { background: var(--green-dark); border-bottom: 1px solid rgba(255,255,255,.16); position: sticky; top: 0; z-index: 50; box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+    .header-inner { max-width: 1180px; margin: auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--white); }
+    .logo img { height: 58px; width: auto; display: block; border-radius: 10px; }
+    .logo-text { font-weight: 800; font-size: 20px; line-height: 1.1; }
+    .logo-text small { display: block; font-size: 12px; color: rgba(255,255,255,.82); font-weight: 600; margin-top: 2px; }
+    .nav { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    .nav a { color: var(--white); text-decoration: none; font-weight: 700; font-size: 13px; padding: 8px 10px; border-radius: 999px; }
+    .nav a:hover { background: rgba(255,255,255,.14); }
+    .hero {
+      background: radial-gradient(circle at 15% 20%, rgba(255,255,255,.18), transparent 30%), linear-gradient(135deg, var(--green-dark), var(--green-main));
+      color: var(--white); padding: 64px 20px 50px;
+    }
+    .hero-inner { max-width: 1180px; margin: auto; display: grid; grid-template-columns: 1.5fr .8fr; gap: 34px; align-items: center; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 8px 13px; font-weight: 700; font-size: 14px; margin-bottom: 18px; }
+    .hero h1 { margin: 0; font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -1px; }
+    .hero p { font-size: 18px; max-width: 780px; opacity: .96; }
+    .hero-card { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius); padding: 24px; backdrop-filter: blur(6px); }
+    .hero-card strong { display: block; font-size: 18px; margin-bottom: 8px; }
+    .wrap { max-width: 1180px; margin: -28px auto 50px; padding: 0 20px; display: grid; grid-template-columns: 280px 1fr; gap: 24px; align-items: start; }
+    aside { position: sticky; top: 96px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); }
+    aside h3 { margin: 8px 10px 12px; color: var(--green-dark); font-size: 16px; }
+    aside a { display: block; text-decoration: none; color: var(--text); border-radius: 12px; padding: 10px 12px; font-weight: 700; font-size: 14px; }
+    aside a:hover { background: var(--green-light); color: var(--green-dark); }
+    main { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+    section { padding: 32px; border-bottom: 1px solid var(--line); }
+    section:last-child { border-bottom: 0; }
+    h2 { margin: 0 0 14px; color: var(--green-dark); font-size: 28px; line-height: 1.15; display: flex; gap: 12px; align-items: center; }
+    h2 span.icon { width: 42px; height: 42px; border-radius: 12px; background: var(--green-light); display: inline-flex; align-items: center; justify-content: center; font-size: 22px; flex: 0 0 auto; }
+    h3 { color: var(--green-dark); margin-top: 22px; margin-bottom: 10px; }
+    p { margin: 0 0 14px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+    .card { background: var(--green-soft); border: 1px solid var(--line); border-radius: 16px; padding: 18px; }
+    .card strong { color: var(--green-dark); display: block; margin-bottom: 6px; }
+    ul { padding-left: 22px; margin-top: 8px; }
+    li { margin-bottom: 7px; }
+    table { width: 100%; border-collapse: collapse; margin: 18px 0; overflow: hidden; border-radius: 14px; border: 1px solid var(--line); }
+    th { background: var(--green-dark); color: var(--white); text-align: left; padding: 12px; }
+    td { border-top: 1px solid var(--line); padding: 12px; vertical-align: top; }
+    .notice { background: #fff9e8; border-left: 5px solid #d9a800; padding: 16px; border-radius: 12px; margin-top: 16px; }
+    .contact-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+    .contact-box-two { grid-template-columns: repeat(2, 1fr); }
+    .contact-item { background: var(--green-dark); color: var(--white); border-radius: 16px; padding: 18px; }
+    .contact-item a { color: var(--white); font-weight: 800; word-break: break-word; }
+    .placeholder { background: rgba(255,255,255,.18); border: 1px dashed rgba(255,255,255,.65); border-radius: 8px; padding: 4px 7px; display: inline-block; }
+    footer { background: var(--green-dark); color: var(--white); padding: 30px 20px; text-align: center; }
+    footer a { color: #d9ffe6; font-weight: 800; }
+    .updated { color: var(--muted); font-size: 14px; margin-top: 18px; }
+    .backtop { position: fixed; right: 18px; bottom: 18px; background: var(--green-dark); color: var(--white); text-decoration: none; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); font-size: 22px; }
+    @media (max-width: 920px) { .hero-inner, .wrap { grid-template-columns: 1fr; } aside { position: static; } .nav { display: none; } .contact-box { grid-template-columns: 1fr; } }
+    @media (max-width: 620px) { section { padding: 24px 18px; } .grid { grid-template-columns: 1fr; } .logo img { height: 46px; } .hero { padding-top: 42px; } }
+    @media print { header, aside, .backtop { display: none; } .wrap { display: block; margin: 0; max-width: none; } main { box-shadow: none; border: none; } section { break-inside: avoid; } }
+  
+    p, li, td {
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
+    h1, h2, h3, th {
+      text-align: left;
+    }
+
+    .card,
+    .notice,
+    .contact-item {
+      text-align: justify;
+    }
+
+
+    .rights-channel-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 18px 0;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .rights-channel-table th {
+      background: var(--green-dark);
+      color: var(--white);
+      padding: 14px;
+      text-align: left;
+    }
+
+    .rights-channel-table td {
+      padding: 14px;
+      border-top: 1px solid var(--line);
+      vertical-align: top;
+      text-align: justify;
+    }
+
+    .channel-icon {
+      font-size: 22px;
+      margin-right: 8px;
+    }
+
+</style>
+</head>
+<body id="top">
+  <div class="topbar">Aviso de Privacidad conforme a la Ley Orgánica de Protección de Datos Personales del Ecuador</div>
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="https://fastnet.com.ec/" target="_blank" rel="noopener">
+        <img src="data:image/png;base64,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" alt="Logo FASTNET" />
+        <span class="logo-text">Aviso de Privacidad<small>NETQUICK S.A. · Nombre comercial FASTNET</small></span>
+      </a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#responsable">Responsable</a><a href="#finalidades">Finalidades</a><a href="#datos">Datos</a><a href="#bases">Base legal</a><a href="#derechos">Derechos</a><a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="badge">🔐 Protección de Datos Personales</div>
+        <h1>Aviso de Privacidad</h1>
+        <p>En FASTNET valoramos su privacidad. Este Aviso explica cómo NETQUICK S.A., bajo el nombre comercial FASTNET, recopila, utiliza, conserva, protege y, cuando corresponde, comunica sus datos personales durante la prestación de servicios de internet y telecomunicaciones.</p>
+      </div>
+      <div class="hero-card"><strong>Información importante</strong><p>El tratamiento de datos personales se realiza conforme a la Ley Orgánica de Protección de Datos Personales (LOPDP), la Ley Orgánica de Telecomunicaciones y demás normativa aplicable.</p></div>
+    </div>
+  </section>
+  <div class="wrap">
+    <aside>
+      <h3>Contenido</h3>
+      <a href="#responsable">1. Identidad del Responsable</a>
+      <a href="#alcance">2. Alcance</a>
+      <a href="#finalidades">3. Finalidades</a>
+      <a href="#datos">4. Datos que tratamos</a>
+      <a href="#bases">5. Base de licitud</a>
+      <a href="#transferencias">6. Destinatarios</a>
+      <a href="#conservacion">7. Conservación</a>
+      <a href="#derechos">8. Derechos</a>
+      <a href="#seguridad">9. Seguridad</a>
+      <a href="#cookies">10. Sitio web y cookies</a>
+      <a href="#contacto">11. Contacto</a>
+    </aside>
+    <main>
+      <section id="responsable">
+        <h2><span class="icon">🏢</span>1. Identidad del Responsable</h2>
+        <p>El Responsable del Tratamiento de sus datos personales es <strong>NETQUICK S.A.</strong>, que opera comercialmente bajo el nombre <strong>FASTNET</strong>.</p>
+        <div class="grid">
+          <div class="card"><strong>Nombre comercial</strong>FASTNET</div>
+          <div class="card"><strong>Razón social</strong>NETQUICK S.A.</div>
+          <div class="card"><strong>Sitio web</strong><a href="https://fastnet.com.ec/" target="_blank" rel="noopener">https://fastnet.com.ec/</a></div>
+          <div class="card"><strong>Domicilio</strong>Calle Ambato y Puyo (Mercado Municipal), Santo Domingo, Ecuador</div>
+          <div class="card"><strong>RUC</strong>2390624398001</div>
+        </div>
+        
+      </section>
+      <section id="alcance"><h2><span class="icon">📌</span>2. Alcance del Aviso</h2><p>Este Aviso aplica a clientes, abonados, solicitantes, usuarios, representantes, contactos de emergencia, visitantes del sitio web, proveedores y demás personas cuyos datos personales sean tratados por FASTNET en el marco de sus servicios, canales digitales, atención al cliente, soporte técnico, facturación, cobranza, gestión comercial y cumplimiento de obligaciones legales o regulatorias.</p></section>
+      <section id="finalidades"><h2><span class="icon">🎯</span>3. Finalidades del Tratamiento</h2><p>FASTNET podrá tratar datos personales para las siguientes finalidades:</p><div class="grid">
+        <div class="card"><strong>Prestación del servicio</strong>Instalación, activación, administración, mantenimiento, soporte y continuidad del servicio de internet.</div>
+        <div class="card"><strong>Gestión contractual</strong>Registro del abonado, verificación de identidad, gestión del contrato, cambios de plan, suspensión o terminación.</div>
+        <div class="card"><strong>Facturación y cobranza</strong>Emisión de comprobantes, gestión de pagos, cartera, mora, reclamos y atención de solicitudes.</div>
+        <div class="card"><strong>Soporte técnico</strong>Atención de tickets, visitas técnicas, diagnóstico de fallas, gestión de equipos y calidad del servicio.</div>
+        <div class="card"><strong>Seguridad y prevención</strong>Protección de redes, prevención de fraude, gestión de incidentes, control de accesos y seguridad de instalaciones.</div>
+        <div class="card"><strong>Obligaciones legales</strong>Cumplimiento de requerimientos de autoridades competentes, normativa tributaria, telecomunicaciones y protección de datos.</div>
+        <div class="card"><strong>Comunicaciones del servicio</strong>Notificaciones operativas, informativas, técnicas, contractuales, regulatorias o de seguridad.</div>
+        <div class="card"><strong>Promociones y marketing</strong>Envío de ofertas, promociones o campañas comerciales únicamente cuando exista base de licitud aplicable o consentimiento cuando corresponda.</div>
+      </div></section>
+      <section id="datos"><h2><span class="icon">🧾</span>4. Categorías de Datos Personales</h2><ul>
+        <li>Datos de identificación: nombres, apellidos, cédula, RUC, firma, información de representante legal.</li>
+        <li>Datos de contacto: dirección, correo electrónico, teléfono, ubicación de instalación del servicio.</li>
+        <li>Datos contractuales: número de contrato, plan contratado, fecha de instalación, historial de servicios.</li>
+        <li>Datos de facturación y pago: comprobantes, pagos, deuda, estado de cuenta y datos tributarios.</li>
+        <li>Datos técnicos: IP, logs de conexión, equipos, dirección MAC, incidencias, calidad del servicio y soporte.</li>
+        <li>Datos derivados de atención al cliente: reclamos, solicitudes, grabaciones o evidencias de atención cuando aplique.</li>
+        <li>Datos de videovigilancia: imágenes captadas en instalaciones físicas señalizadas, cuando corresponda.</li>
+        <li>Datos sensibles: únicamente cuando sean necesarios, por ejemplo, para gestionar beneficios previstos en la Ley Orgánica de Discapacidades, con las garantías y bases de licitud correspondientes.</li>
+      </ul></section>
+      <section id="bases"><h2><span class="icon">⚖️</span>5. Base de Licitud del Tratamiento</h2><table><thead><tr><th>Base de licitud</th><th>Aplicación</th></tr></thead><tbody>
+        <tr><td>Ejecución de contrato</td><td>Prestación, instalación, administración, facturación, soporte y continuidad del servicio contratado.</td></tr>
+        <tr><td>Medidas precontractuales</td><td>Atención de solicitudes de contratación, verificación de cobertura, cotizaciones y evaluación previa del servicio.</td></tr>
+        <tr><td>Cumplimiento de obligaciones legales y regulatorias</td><td>Obligaciones tributarias, telecomunicaciones, protección de datos y atención de requerimientos de autoridades competentes.</td></tr>
+        <tr><td>Interés legítimo</td><td>Seguridad de la red, prevención de fraude, videovigilancia, protección de bienes e instalaciones y mejora operativa.</td></tr>
+        <tr><td>Consentimiento</td><td>Finalidades que legalmente lo requieran, como determinadas comunicaciones comerciales o tratamiento de datos sensibles cuando corresponda.</td></tr>
+      </tbody></table></section>
+      <section id="transferencias"><h2><span class="icon">🔁</span>6. Destinatarios, Encargados y Transferencias</h2><p>Los datos personales podrán ser tratados por personal autorizado de FASTNET y, cuando sea necesario, por proveedores que actúen como encargados del tratamiento, tales como proveedores tecnológicos, facturación, soporte, alojamiento, sistemas de gestión, mensajería, cobranza o servicios profesionales.</p><p>Asimismo, podrán comunicarse datos a autoridades competentes cuando exista obligación legal, requerimiento válido o necesidad de ejercer o defender derechos. FASTNET exigirá a sus proveedores obligaciones de confidencialidad, seguridad y tratamiento conforme a instrucciones.</p></section>
+      <section id="conservacion"><h2><span class="icon">🗓️</span>7. Plazo de Conservación</h2><p>Los datos personales serán conservados durante el tiempo necesario para cumplir las finalidades informadas, la ejecución del contrato, las obligaciones legales, regulatorias y contractuales aplicables, la atención de requerimientos de autoridades competentes y el ejercicio o defensa de derechos.</p><p>Cumplidas dichas finalidades y vencidos los plazos legales aplicables, los datos serán eliminados, anonimizados o bloqueados, según corresponda, mediante procedimientos seguros.</p></section>
+      <section id="derechos"><h2><span class="icon">🙋</span>8. Derechos del Titular</h2>
+        <p>Usted puede ejercer los derechos de acceso, rectificación, eliminación, oposición, portabilidad, suspensión del tratamiento y a no ser objeto de una decisión basada única o parcialmente en valoraciones automatizadas, así como los demás derechos reconocidos por la Ley Orgánica de Protección de Datos Personales (LOPDP).</p>
+        <p>Para facilitar la gestión de sus solicitudes, FASTNET pone a disposición de los titulares el <strong>FORMULARIO PARA EL EJERCICIO DE DERECHOS DE PROTECCIÓN DE DATOS PERSONALES</strong>, publicado en nuestra página web oficial.</p>
+        <p>El uso de dicho formulario no constituye una limitación al ejercicio de sus derechos. El titular podrá presentar su solicitud por cualquier medio habilitado por FASTNET, siempre que esta cumpla con los requisitos mínimos establecidos en la LOPDP y su normativa aplicable, incluyendo la identificación del titular, la descripción clara del derecho que desea ejercer y los datos necesarios para atender la solicitud.</p>
+
+        <table class="rights-channel-table">
+          <thead>
+            <tr>
+              <th>Canal habilitado</th>
+              <th>Detalle para la presentación de solicitudes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="channel-icon">🏢</span><strong>Entrega física</strong></td>
+              <td>Las solicitudes podrán ser presentadas físicamente en la dirección de NETQUICK S.A. / FASTNET: <strong>Calle Ambato y Puyo (Mercado Municipal), Santo Domingo, Ecuador</strong>.</td>
+            </tr>
+            <tr>
+              <td><span class="channel-icon">📧</span><strong>Correo del Delegado de Protección de Datos Personales</strong></td>
+              <td>Las solicitudes también podrán enviarse al correo electrónico del Delegado de Protección de Datos Personales: <a href="mailto:proteccion.datosfastnet@hotmail.com"><strong>proteccion.datosfastnet@hotmail.com</strong></a>.</td>
+            </tr>
+            <tr>
+              <td><span class="channel-icon">🌐</span><strong>Página web oficial</strong></td>
+              <td>El formulario para el ejercicio de derechos estará disponible en el sitio web oficial: <a href="https://fastnet.com.ec/" target="_blank" rel="noopener"><strong>https://fastnet.com.ec/</strong></a>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>FASTNET atenderá las solicitudes dentro de los plazos y conforme al procedimiento previsto en la normativa aplicable.</p></section>
+      <section id="seguridad"><h2><span class="icon">🛡️</span>9. Medidas de Seguridad</h2><p>FASTNET implementa medidas físicas, técnicas, organizativas y administrativas apropiadas para garantizar la confidencialidad, integridad, disponibilidad y resiliencia de los datos personales, considerando la naturaleza de la información, los riesgos asociados al tratamiento y el estado de la técnica.</p><p>Estas medidas buscan prevenir accesos, usos, alteraciones, pérdidas, destrucciones, divulgaciones o cualquier otra forma de tratamiento no autorizado.</p></section>
+      <section id="cookies"><h2><span class="icon">🌐</span>10. Sitio Web y Cookies</h2><p>El sitio web de FASTNET podrá utilizar cookies u otras tecnologías similares para garantizar su funcionamiento, mejorar la experiencia del usuario, analizar navegación o facilitar canales de contacto. Cuando corresponda, se informará al usuario y se solicitará su consentimiento conforme a la normativa aplicable.</p></section>
+      <section id="actualizacion"><h2><span class="icon">🔄</span>11. Actualización del Aviso</h2><p>FASTNET podrá actualizar este Aviso de Privacidad para reflejar cambios legales, regulatorios, técnicos, operativos o de sus procesos internos. La versión vigente estará disponible en el sitio web oficial y demás canales habilitados.</p><p class="updated">Última actualización: <strong>junio de 2026</strong></p></section>
+      <section id="contacto"><h2><span class="icon">📬</span>12. Canales de Contacto</h2><p>Para consultas sobre este Aviso de Privacidad o para ejercer derechos de protección de datos personales, utilice los siguientes canales:</p><div class="contact-box contact-box-two">
+        <div class="contact-item"><strong>Delegado de Protección de Datos</strong><br><a href="mailto:proteccion.datosfastnet@hotmail.com">proteccion.datosfastnet@hotmail.com</a></div>
+        <div class="contact-item"><strong>Sitio web oficial</strong><br><a href="https://fastnet.com.ec/" target="_blank" rel="noopener">https://fastnet.com.ec/</a></div>
+      </div></section>
+    </main>
+  </div>
+  <a class="backtop" href="#top" aria-label="Volver arriba">↑</a>
+  <footer><p><strong>FASTNET</strong> · NETQUICK S.A.</p><p>Lo más rápido en internet · <a href="https://fastnet.com.ec/" target="_blank" rel="noopener">https://fastnet.com.ec/</a></p></footer>
+</body>
+</html>
